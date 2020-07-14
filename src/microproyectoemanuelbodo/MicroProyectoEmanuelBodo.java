@@ -13,14 +13,18 @@ public class MicroProyectoEmanuelBodo {
     public static void main(String[] args) {
         
         int cuotaParcial;
-               
+        
+        String marcaM;    
+        
         String marca= JOptionPane.showInputDialog (null,"Ingrese marca de automovil", "Marca",JOptionPane.QUESTION_MESSAGE);
 
-        int modelo=Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el año de fabricación de automovil", "Modelo",JOptionPane.QUESTION_MESSAGE));
+        int modelo=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese el año de fabricación de automovil", "Modelo",JOptionPane.QUESTION_MESSAGE));
         
-        String altaGama []= {"bmw","audi", "volvo"};
+        String altaGama []= {"BMW","AUDI","VOLVO"};
         
-        boolean busqueda= buscar (altaGama,marca);
+         marcaM = marca.toUpperCase();
+        
+        boolean busqueda= buscar (altaGama,marcaM);
         
         if (busqueda){cuotaParcial=1800;
      
@@ -29,29 +33,31 @@ public class MicroProyectoEmanuelBodo {
     }
         
                
-        int cuotaParcialDos=cotizar ();
+        int cuotaParcialDos=cotizar (modelo);
                         
         int cuotaFinal=cuotaParcial+cuotaParcialDos;
        
-        JOptionPane.showMessageDialog (null,"Su marca, modelo y cotización en $:\n" +marca+ "\n"+modelo+"\n" +cuotaFinal, "Resultado",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog (null,"Su marca, modelo y cotización en $"
+                + ":\n" +marca+ "\n"+modelo+"\n" +cuotaFinal, "Resultado",JOptionPane.INFORMATION_MESSAGE);
     }    
-    public static boolean buscar (String altaGama [],String marca){
+    public static boolean buscar (String autoCaro [],String auto ){
     
-         for (String i:altaGama){
-        if (i.equals (marca)){return true;
-        
+         for (String i:autoCaro){
+        if (i.equals (auto)){
+            return true;       
 }
     
 }
 return false;
     }
-    
-    public static int cotizar (){
-        int modelo=Integer.parseInt(JOptionPane.showInputDialog(null, "Reingrese el año de fabricación de automovil", "Modelo",JOptionPane.QUESTION_MESSAGE));
-        int cuotaParcialDos;
-        switch (modelo){
+   
+    public static int cotizar (int modeloFuncion){
+       
+        int cuotaParcialDos=0;
+       
+        switch (modeloFuncion){
             case 1990: case 1991: case 1992: case 1993: case 1994: case 1995: case 1996: case 1997: case 1998: case 1999: 
-              cuotaParcialDos=480;
+            cuotaParcialDos=480;
              break;
             case 2000: case 2001: case 2002: case 2003: case 2004: case 2005: case 2006: case 2007: case 2008: case 2009: case 2010:
                 cuotaParcialDos=780;
