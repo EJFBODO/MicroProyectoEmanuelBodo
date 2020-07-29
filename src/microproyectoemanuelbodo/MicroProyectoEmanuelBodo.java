@@ -12,7 +12,7 @@ public class MicroProyectoEmanuelBodo {
                       
         int partialFee;        
         String brand= JOptionPane.showInputDialog (null,"Enter your car´s brand", "Brand",JOptionPane.QUESTION_MESSAGE);
-        int age=Integer.parseInt(JOptionPane.showInputDialog(null,"Enter your car´s age of manufacturing", "Age",JOptionPane.QUESTION_MESSAGE));
+        int age=Integer.parseInt(JOptionPane.showInputDialog(null,"Enter your car´s year of manufacturing", "Age",JOptionPane.QUESTION_MESSAGE));
         String luxuryBrand []= {"BMW","AUDI","VOLVO"};
         String brandU=brand.toUpperCase ();
         boolean search= searching (luxuryBrand,brandU);
@@ -24,7 +24,7 @@ public class MicroProyectoEmanuelBodo {
                    
         int finalFee=partialFee+partialFeeTwo;
      
-        JOptionPane.showMessageDialog (null,"Your car´s brand,age and fee"
+        JOptionPane.showMessageDialog (null,"Your car´s brand,year and fee"
                 + ":\n" +brand+ "\n"+age+"\n" +finalFee, "Result",JOptionPane.INFORMATION_MESSAGE);
                 
      }            
